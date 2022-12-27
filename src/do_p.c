@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_instructions.c                                :+:      :+:    :+:   */
+/*   do_p.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hwong <hwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/27 01:26:07 by hwong             #+#    #+#             */
-/*   Updated: 2022/12/27 01:26:08 by hwong            ###   ########.fr       */
+/*   Created: 2022/12/28 01:33:50 by hwong             #+#    #+#             */
+/*   Updated: 2022/12/28 01:33:50 by hwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/checker.h"
+#include "push_swap.h"
 
-int	read_instructions(t_rules **rules)
+static void	push(t_stk **src, t_stk **dest)
 {
-	int		ret;
-	char	*line;
-	int		nbr;
+	t_stk	*tmp;
 
-	nbr = 0;
-	while ((ret = get_next_line(0, &line)) > 0)
-	{
-		if (ft_strlen(line) > 3 || ft_strlen(line) < 2)
-		{
-			free(line);
-			return (0);
-		}
-		push_rules(rules, line);
-		free(line);
-	}
-	if (ret == -1)
-		return (0);
-	return (1);
+	if (*src == NULL)
+		return ;
+	tmp = (*src)->next;
+	(*src)->next = *dest;
+	*dest = *src;
+	*src = tmp;
+}
+
+void	do_pa(t_stk **stk_a, t_stk **stk_b)
+{
+	push(stk_b, stk_a);
+	ft_putstr("pa\n");
+}
+
+void	do_pb(t_stk **stk_a, t_stk **stk_b)
+{
+	push(stk_a, stk_b);
+	ft_putstr("pb\n");
 }
