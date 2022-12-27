@@ -6,7 +6,7 @@
 /*   By: hwong <hwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 01:25:52 by hwong             #+#    #+#             */
-/*   Updated: 2022/12/27 01:25:53 by hwong            ###   ########.fr       */
+/*   Updated: 2022/12/27 18:23:57 by hwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ static void	get_rules(t_rules **rules_lst, t_stack *root_a)
 		exit(0);
 	}
 }
+
+void	handle_input
 
 int			main(int arg, char **argc)
 {
