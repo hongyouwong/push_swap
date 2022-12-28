@@ -6,7 +6,7 @@
 /*   By: hwong <hwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 01:34:56 by hwong             #+#    #+#             */
-/*   Updated: 2022/12/28 01:35:40 by hwong            ###   ########.fr       */
+/*   Updated: 2022/12/28 09:55:10 by hwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,6 @@ static int	have_duplicates(char **av)
 	return (0);
 }
 
-/* arg_is_zero:
-*   Checks the argument is a 0 to avoid 0 +0 -0 duplicates
-*	and 0 0000 +000 -00000000 too.
-*   Return: 1 if the argument is a zero, 0 if it contains
-*	anything else than a zero.
-*/
 static int	arg_is_zero(char *av)
 {
 	int	i;
@@ -66,6 +60,12 @@ static int	arg_is_zero(char *av)
 	return (1);
 }
 
+/*
+*	check whether each input is a number
+*	if 
+*
+*
+*/
 int	is_correct_input(char **av)
 {
 	int	i;

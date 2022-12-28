@@ -6,7 +6,7 @@
 /*   By: hwong <hwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 01:35:50 by hwong             #+#    #+#             */
-/*   Updated: 2022/12/28 01:35:59 by hwong            ###   ########.fr       */
+/*   Updated: 2022/12/28 09:55:10 by hwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,22 +33,30 @@ static void	push_swap(t_stk **stk_a, t_stk **stk_b, int stack_size)
 		sort(stk_a, stk_b);
 }
 
-int	main(int ac, char **av)
+/*
+*	check that ./push_swap was called with at least 1 arg
+*	check if input was valid
+*	fill stk_a with input
+*	index the values in stk_a
+*	throw the filled stk_a and empty stk_b to the push_swap function
+*/
+int	main(int argc, char **argv)
 {
 	t_stk	*stk_a;
 	t_stk	*stk_b;
 	int		stack_size;
 
-	if (ac < 2)
-		return (0);
-	if (!is_correct_input(av))
-		exit_error(NULL, NULL);
-	stk_b = NULL;
-	stk_a = fill_stack_values(ac, av);
-	stack_size = get_stk_size(stk_a);
-	assign_index(stk_a, stack_size + 1);
-	push_swap(&stk_a, &stk_b, stack_size);
-	free_stack(&stk_a);
-	free_stack(&stk_b);
+	if (argc > 1)
+	{
+		if (!is_correct_input(argv))
+			exit_error(NULL, NULL);
+		stk_b = NULL;
+		stk_a = fill_stack_values(argc, argv);
+		stack_size = get_stk_size(stk_a);
+		assign_index(stk_a, stack_size + 1);
+		push_swap(&stk_a, &stk_b, stack_size);
+		free_stack(&stk_a);
+		free_stack(&stk_b);
+	}
 	return (0);
 }
