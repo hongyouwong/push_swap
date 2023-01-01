@@ -1,39 +1,32 @@
-CC		= gcc
-CFLAGS	= -Wall -Werror -Wextra
-NAME	= push_swap
+NAME		= push_swap
+CC			= gcc
+RM			= rm -rf
+CFLAGS		= -Wall -Werror -Wextra
 
-SRC_PATH = src/
-OBJ_PATH = obj/
+INCLUDES	= includes
 
-SRC		= main.c \
-		input_check.c input_check_utils.c \
-		init.c \
-		stack.c \
-		do_s.c do_p.c do_r.c do_rr.c \
-		sort_tiny.c sort.c \
-		position.c cost.c do_move.c \
-		utils.c
-SRCS	= $(addprefix $(SRC_PATH), $(SRC))
-OBJ		= $(SRC:.c=.o)
-OBJS	= $(addprefix $(OBJ_PATH), $(OBJ))
-INCS	= -I ./includes/
+SRCS		= src/main.c src/input_check.c src/input_check_utils.c src/init.c src/stack.c src/do_s.c src/do_p.c src/do_r.c src/do_rr.c src/sort_tiny.c src/sort.c src/position.c src/cost.c src/do_move.c src/utils.c
+OBJS		= ${SRCS:.c=.o}
 
-all: $(OBJ_PATH) $(NAME) 
+SRCS_BONUS	= bonus/checker.c bonus/get_next_line.c
+OBJS_BONUS	= ${SRCS_BONUS:.c=.o}
 
-$(OBJ_PATH)%.o: $(SRC_PATH)%.c
-	$(CC) $(CFLAGS) -c $< -o $@ $(INCS)
-
-$(OBJ_PATH):
-	mkdir $(OBJ_PATH)
+.c.o:
+	$(CC) $(CFLAGS) -c $< -o ${<:.c=.o} -I $(INCLUDES)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CC) $(CFLAGS) -I $(INCLUDES) $(OBJS) -o $(NAME)
+
+bonus: $(NAME)
+	$(CC) $(CFLAGS) -I $(INCLUDES) $(OBJS_BONUS) -o checker
+
+all: $(NAME) bonus
 
 clean:
-	rm -rf $(OBJ_PATH)
+	$(RM) $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
-	rm -f $(NAME)
+	$(RM) $(NAME) checker
 
 re: fclean all
 

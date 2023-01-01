@@ -6,7 +6,7 @@
 /*   By: hwong <hwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 00:51:52 by hwong             #+#    #+#             */
-/*   Updated: 2022/12/28 01:40:32 by hwong            ###   ########.fr       */
+/*   Updated: 2022/12/31 20:49:03 by hwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ void		assign_index(t_stk *stk_a, int ac);
 
 /* Sorting Algorithms */
 
-int			is_sorted(t_stk *stack);
-void		tiny_sort(t_stk **stack);
+int			is_sorted(t_stk *stk);
+void		tiny_sort(t_stk **stk);
 void		sort(t_stk **stk_a, t_stk **stk_b);
 
 /* Position */
 
-int			get_lowest_index_position(t_stk **stack);
+int			get_lowest_index_position(t_stk **stk);
 void		get_target_position(t_stk **stk_a, t_stk **stk_b);
 
 /* Cost */
@@ -71,15 +71,15 @@ void		do_rrb(t_stk **stk_b);
 
 /* Stack Functions */
 
-t_stk		*get_stk_bottom(t_stk *stack);
-t_stk		*get_stk_before_bottom(t_stk *stack);
+t_stk		*get_stk_bottom(t_stk *stk);
+t_stk		*get_stk_before_bottom(t_stk *stk);
 t_stk		*stack_new(int value);
-void		stk_add_bottom(t_stk **stack, t_stk *new);
-int			get_stk_size(t_stk	*stack);
+void		stk_add_bottom(t_stk **stk, t_stk *new);
+int			get_stk_size(t_stk	*stk);
 
 /* Utils */
 
-void		free_stack(t_stk **stack);
+void		free_stack(t_stk **stk);
 long int	ft_atoi(const char *str);
 void		ft_putstr(char *str);
 int			nb_abs(int nb);
@@ -94,5 +94,10 @@ int			is_correct_input(char **av);
 int			is_digit(char c);
 int			is_sign(char c);
 int			nbstr_cmp(const char *s1, const char *s2);
+
+/* Checker*/
+
+char	*get_next_line(int fd);
+
 
 #endif
