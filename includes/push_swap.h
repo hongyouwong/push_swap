@@ -6,7 +6,7 @@
 /*   By: hwong <hwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 00:51:52 by hwong             #+#    #+#             */
-/*   Updated: 2022/12/31 20:49:03 by hwong            ###   ########.fr       */
+/*   Updated: 2023/01/02 14:40:25 by hwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ typedef struct s_stk
 
 /* Initialization */
 
-t_stk		*fill_stack_values(int ac, char **av);
-void		assign_index(t_stk *stk_a, int ac);
+t_stk		*fill_stack_values(int argc, char **argv);
+void		assign_index(t_stk *stk_a, int argc);
 
 /* Sorting Algorithms */
 
@@ -83,6 +83,7 @@ void		free_stack(t_stk **stk);
 long int	ft_atoi(const char *str);
 void		ft_putstr(char *str);
 int			nb_abs(int nb);
+size_t		slen(const char *s);
 
 /* Error */
 
@@ -90,14 +91,9 @@ void		exit_error(t_stk **stk_a, t_stk **stk_b);
 
 /* Input Check */
 
-int			is_correct_input(char **av);
+int			is_correct_input(char **argv);
 int			is_digit(char c);
 int			is_sign(char c);
-int			nbstr_cmp(const char *s1, const char *s2);
-
-/* Checker*/
-
-char	*get_next_line(int fd);
-
+int			numstr_cmp(const char *s1, const char *s2);
 
 #endif

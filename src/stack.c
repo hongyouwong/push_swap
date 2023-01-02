@@ -6,7 +6,7 @@
 /*   By: hwong <hwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 01:36:20 by hwong             #+#    #+#             */
-/*   Updated: 2022/12/28 01:36:20 by hwong            ###   ########.fr       */
+/*   Updated: 2023/01/02 14:53:03 by hwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_stk	*get_stk_before_bottom(t_stk *stk)
 	return (stk);
 }
 
-/* stack_new:
+/*
 *	Creates a stack elements with the provided value.
 *	Returns the newly created stack element.
 */

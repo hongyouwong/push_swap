@@ -6,7 +6,7 @@
 /*   By: hwong <hwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 01:34:05 by hwong             #+#    #+#             */
-/*   Updated: 2022/12/28 01:34:05 by hwong            ###   ########.fr       */
+/*   Updated: 2023/01/02 14:22:15 by hwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ static void	swap(t_stk *stack)
 	stack->index = stack->next->index;
 	stack->next->index = tmp;
 }
+
 void	do_sa(t_stk **stk_a)
 {
 	swap(*stk_a);

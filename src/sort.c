@@ -6,13 +6,13 @@
 /*   By: hwong <hwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 01:36:15 by hwong             #+#    #+#             */
-/*   Updated: 2022/12/28 01:36:16 by hwong            ###   ########.fr       */
+/*   Updated: 2023/01/02 14:52:04 by hwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* push_all_save_three:
+/*
 *	Pushes all the elements of stack a into stack b, except the three last ones.
 *	Pushes the smaller values first, and then the larger values to help with
 *	sorting efficiency.
@@ -44,7 +44,7 @@ static void	push_all_save_three(t_stk **stk_a, t_stk **stk_b)
 	}
 }
 
-/* shift_stk:
+/*
 *	After the bulk of the stack is sorted, shifts stack a until the lowest
 *	value is at the top. If it is in the bottom half of the stack, reverse
 *	rotate it into position, otherwise rotate until it is at the top of the
@@ -75,7 +75,7 @@ static void	shift_stk(t_stk **stk_a)
 	}
 }
 
-/* sort:
+/*
 *	Sorting algorithm for a stack larger than 3.
 *		Push everything but 3 numbers to stack B.
 *		Sort the 3 numbers left in stack A.

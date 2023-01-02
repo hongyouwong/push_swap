@@ -6,17 +6,17 @@
 /*   By: hwong <hwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 01:34:10 by hwong             #+#    #+#             */
-/*   Updated: 2022/12/28 01:34:10 by hwong            ###   ########.fr       */
+/*   Updated: 2023/01/02 14:52:26 by hwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* fill_stack_values:
+/*
 *	Fills stk_a with the provided values.
 *	If the values are out of integer range, prints and error and exits the program.
 */
-t_stk	*fill_stack_values(int ac, char **av)
+t_stk	*fill_stack_values(int argc, char **argv)
 {
 	t_stk		*stk_a;
 	long int	nb;
@@ -25,9 +25,9 @@ t_stk	*fill_stack_values(int ac, char **av)
 	stk_a = NULL;
 	nb = 0;
 	i = 1;
-	while (i < ac)
+	while (i < argc)
 	{
-		nb = ft_atoi(av[i]);
+		nb = ft_atoi(argv[i]);
 		if (nb > INT_MAX || nb < INT_MIN)
 			exit_error(&stk_a, NULL);
 		if (i == 1)
@@ -39,7 +39,7 @@ t_stk	*fill_stack_values(int ac, char **av)
 	return (stk_a);
 }
 
-/* assign_index:
+/*
 *	Assigns an index to each value in stack a. This is a convenient way to order
 *	the stack because indexes can be checked and compared instead of actual values,
 *	which may or may not be adjacent to each other.

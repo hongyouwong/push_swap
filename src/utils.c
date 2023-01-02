@@ -6,7 +6,7 @@
 /*   By: hwong <hwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 01:36:24 by hwong             #+#    #+#             */
-/*   Updated: 2022/12/28 01:36:24 by hwong            ###   ########.fr       */
+/*   Updated: 2023/01/02 14:05:38 by hwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,14 +63,10 @@ long int	ft_atoi(const char *str)
 
 void	ft_putstr(char *str)
 {
-	int	i;
+	int	len;
 
-	i = 0;
-	while (str[i])
-	{
-		write(1, &str[i], 1);
-		i++;
-	}
+	len = slen(str);
+	write(1, str, len);
 }
 
 int	nb_abs(int nb)

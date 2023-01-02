@@ -6,7 +6,7 @@
 /*   By: hwong <hwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 01:35:50 by hwong             #+#    #+#             */
-/*   Updated: 2022/12/31 20:59:47 by hwong            ###   ########.fr       */
+/*   Updated: 2023/01/02 14:22:30 by hwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,9 @@ int	main(int argc, char **argv)
 	t_stk	*stk_b;
 	int		stack_size;
 
-	if (argc < 2 || !is_correct_input(argv))
+	if (argc == 1)
+		return (0);
+	if (!is_correct_input(argv))
 		exit_error(NULL, NULL);
 	stk_b = NULL;
 	stk_a = fill_stack_values(argc, argv);

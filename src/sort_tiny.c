@@ -6,13 +6,13 @@
 /*   By: hwong <hwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 01:36:09 by hwong             #+#    #+#             */
-/*   Updated: 2022/12/28 01:36:09 by hwong            ###   ########.fr       */
+/*   Updated: 2023/01/02 14:52:10 by hwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* find_highest_index:
+/*
 *	Returns the highest index in a stack.
 */
 static int	find_highest_index(t_stk *stk)
@@ -29,7 +29,7 @@ static int	find_highest_index(t_stk *stk)
 	return (index);
 }
 
-/* tiny_sort:
+/*
 *	Sorts a stack of 3 numbers in 2 or fewer moves. The sorting is done by index
 *	rather than value. Example:
 *		values:		 0	 9	 2

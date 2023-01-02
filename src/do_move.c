@@ -6,13 +6,13 @@
 /*   By: hwong <hwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 01:33:39 by hwong             #+#    #+#             */
-/*   Updated: 2022/12/28 01:33:39 by hwong            ###   ########.fr       */
+/*   Updated: 2023/01/02 14:52:44 by hwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* do_rev_rotate_both:
+/*
 *	Reverse rotates both stack A and B until one of them is in position.
 *	The given cost is negative since both positions are in the bottom half
 *	of their respective stacks. The cost is increased as the stacks are
@@ -30,7 +30,7 @@ static void	do_rev_rotate_both(t_stk **a, t_stk **b,
 	}
 }
 
-/* do_rotate_both:
+/*
 *	Rotates both stack A and B until one of them is in position.
 *	The given cost is positive since both positions are in the top half
 *	of their respective stacks. The cost is decreased as the stacks are
@@ -47,7 +47,7 @@ static void	do_rotate_both(t_stk **a, t_stk **b, int *cost_a, int *cost_b)
 	}
 }
 
-/* do_rotate_a:
+/*
 *	Rotates stack A until it is in position. If the cost is negative,
 *	the stack will be reverse rotated, if it is positive, it will be 
 *	rotated.
@@ -69,7 +69,7 @@ static void	do_rotate_a(t_stk **a, int *cost)
 	}
 }
 
-/* do_rotate_b:
+/*
 *	Rotates stack B until it is in position. If the cost is negative,
 *	the stack will be reverse rotated, if it is positive, it will be 
 *	rotated.
@@ -91,7 +91,7 @@ static void	do_rotate_b(t_stk **b, int *cost)
 	}
 }
 
-/* do_move:
+/*
 *	Chooses which move to make to get the B stack element to the correct
 *	position in stack A.
 *	If the costs of moving stack A and B into position match (i.e. both negative

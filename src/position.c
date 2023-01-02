@@ -6,13 +6,13 @@
 /*   By: hwong <hwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 01:32:53 by hwong             #+#    #+#             */
-/*   Updated: 2022/12/28 01:32:54 by hwong            ###   ########.fr       */
+/*   Updated: 2023/01/02 14:43:15 by hwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* get_position:
+/*
 *	Assigns a position to each element of a stack from top to bottom
 *	in ascending order.
 *	Example stack:
@@ -40,7 +40,7 @@ static void	get_position(t_stk **stk)
 	}
 }
 
-/* get_lowest_index_position:
+/*
 *	Gets the current position of the element with the lowest index
 *	within a stack.
 */
@@ -66,7 +66,7 @@ int	get_lowest_index_position(t_stk **stk)
 	return (lowest_pos);
 }
 
-/* get_target:
+/*
 *	Picks the best target position in stack A for the given index of
 *	an element in stack B. First checks if the index of the B element can
 *	be placed somewhere in between elements in stack A, by checking whether
@@ -125,7 +125,7 @@ static int	get_target(t_stk **a, int b_idx,
 	return (target_pos);
 }
 
-/* get_target_position:
+/*
 *	Assigns a target position in stack A to each element of stack A.
 *	The target position is the spot the element in B needs to
 *	get to in order to be sorted correctly. This position will

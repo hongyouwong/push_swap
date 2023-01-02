@@ -6,38 +6,38 @@
 /*   By: hwong <hwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 01:34:56 by hwong             #+#    #+#             */
-/*   Updated: 2022/12/28 09:55:10 by hwong            ###   ########.fr       */
+/*   Updated: 2023/01/02 14:40:39 by hwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	arg_is_number(char *av)
+static int	arg_is_number(char *argv)
 {
 	int	i;
 
 	i = 0;
-	if (is_sign(av[i]) && av[i + 1] != '\0')
+	if (is_sign(argv[i]) && argv[i + 1] != '\0')
 		i++;
-	while (av[i] && is_digit(av[i]))
+	while (argv[i] && is_digit(argv[i]))
 		i++;
-	if (av[i] != '\0' && !is_digit(av[i]))
+	if (argv[i] != '\0' && !is_digit(argv[i]))
 		return (0);
 	return (1);
 }
 
-static int	have_duplicates(char **av)
+static int	have_duplicates(char **argv)
 {
 	int	i;
 	int	j;
 
 	i = 1;
-	while (av[i])
+	while (argv[i])
 	{
 		j = 1;
-		while (av[j])
+		while (argv[j])
 		{
-			if (j != i && nbstr_cmp(av[i], av[j]) == 0)
+			if (j != i && numstr_cmp(argv[i], argv[j]) == 0)
 				return (1);
 			j++;
 		}
@@ -46,43 +46,37 @@ static int	have_duplicates(char **av)
 	return (0);
 }
 
-static int	arg_is_zero(char *av)
+static int	arg_is_zero(char *argv)
 {
 	int	i;
 
 	i = 0;
-	if (is_sign(av[i]))
+	if (is_sign(argv[i]))
 		i++;
-	while (av[i] && av[i] == '0')
+	while (argv[i] && argv[i] == '0')
 		i++;
-	if (av[i] != '\0')
+	if (argv[i] != '\0')
 		return (0);
 	return (1);
 }
 
-/*
-*	check whether each input is a number
-*	if 
-*
-*
-*/
-int	is_correct_input(char **av)
+int	is_correct_input(char **argv)
 {
 	int	i;
 	int	nb_zeros;
 
 	nb_zeros = 0;
 	i = 1;
-	while (av[i])
+	while (argv[i])
 	{
-		if (!arg_is_number(av[i]))
+		if (!arg_is_number(argv[i]))
 			return (0);
-		nb_zeros += arg_is_zero(av[i]);
+		nb_zeros += arg_is_zero(argv[i]);
 		i++;
 	}
 	if (nb_zeros > 1)
 		return (0);
-	if (have_duplicates(av))
+	if (have_duplicates(argv))
 		return (0);
 	return (1);
 }
